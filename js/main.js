@@ -106,6 +106,67 @@
 	      }
 	    }
 		});
+
+		$('.project-carousel').owlCarousel({
+			loop: true,
+			autoplay: true,
+			autoplayTimeout: 3000,
+			margin: 30,
+			nav: false,
+			dots: true,
+			autoplayHoverPause: true,
+			responsive: {
+				0: {
+					items: 1,
+					center: false
+				},
+				600: {
+					items: 2,
+					center: false
+				},
+				1000: {
+					items: 3,
+					center: true
+				}
+			}
+		});
+
+		$('.achievement-carousel').owlCarousel({
+			loop: true,
+			autoplay: true,
+			autoplayTimeout: 3000,
+			margin: 30,
+			nav: false,
+			dots: true,
+			autoplayHoverPause: true,
+			responsive: {
+				0: {
+					items: 1,
+					center: false
+				},
+				600: {
+					items: 2,
+					center: false
+				},
+				1000: {
+					items: 3,
+					center: true
+				}
+			},
+			onInitialized: function() {
+				// Re-trigger counter animation if needed
+				if ($.fn.waypoint) {
+					$('.number').each(function() {
+						var $this = $(this);
+						$this.waypoint(function() {
+							$this.animateNumber({
+								number: $this.data('number')
+							}, 2000);
+						}, { offset: '95%' });
+					});
+				}
+			}
+		});
 	};
 	carousel();
 

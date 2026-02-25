@@ -121,6 +121,183 @@
 			}
 		}
 
+		/* Project Carousel Active Effect */
+		.project-carousel {
+			padding: 20px 0 60px 0;
+			display: block !important;
+			overflow: visible !important;
+			position: relative;
+			z-index: 2;
+		}
+
+		.project-carousel .owl-stage-outer {
+			overflow: visible !important;
+			padding: 20px 0;
+		}
+
+		.project-carousel .owl-dots {
+			text-align: center;
+			margin-top: 60px !important;
+			display: block !important;
+		}
+
+		.project-carousel .owl-dot {
+			width: 12px !important;
+			height: 12px !important;
+			background: #444444 !important;
+			margin: 0 5px !important;
+			border-radius: 50%;
+			display: inline-block !important;
+			border: none !important;
+		}
+
+		.project-carousel .owl-dot.active {
+			background: #ffbd39 !important;
+		}
+
+		.project-carousel .blog-entry {
+			margin-bottom: 0;
+			opacity: 1 !important;
+			transform: scale(1) !important;
+			height: 100% !important; /* Ensure full height of parent */
+			min-height: 550px; /* Minimum height for all cards */
+			display: flex;
+			flex-direction: column;
+			background: #1a1a1a;
+			border-radius: 10px;
+			padding: 15px;
+		}
+
+		.project-carousel .item {
+			height: 100% !important;
+			display: flex;
+		}
+
+		.project-carousel .owl-stage {
+			display: flex !important;
+		}
+
+		.project-carousel .blog-entry .text {
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		/* Achievement Carousel Active Effect */
+		.achievement-carousel {
+			padding: 40px 0 0 0;
+			display: block !important;
+			overflow: visible !important;
+			position: relative;
+			z-index: 2;
+		}
+
+		/* Overlap Achievement cards between two sections */
+		@media (min-width: 992px) {
+			.achievement-carousel {
+				margin-bottom: -250px;
+			}
+		}
+
+		@media (max-width: 991px) {
+			.achievement-carousel {
+				margin-bottom: -150px;
+			}
+		}
+
+		.achievement-carousel .owl-stage-outer {
+			overflow: visible !important;
+			padding: 20px 0;
+		}
+
+		.achievement-carousel .owl-dots {
+			text-align: center;
+			margin-top: 40px !important;
+			display: block !important;
+		}
+
+		.achievement-carousel .owl-dot {
+			width: 12px !important;
+			height: 12px !important;
+			background: #444444 !important;
+			margin: 0 5px !important;
+			border-radius: 50%;
+			display: inline-block !important;
+			border: none !important;
+		}
+
+		.achievement-carousel .owl-dot.active {
+			background: #ffbd39 !important;
+		}
+
+		/* Hire Me Section Padding for Overlap */
+		@media (min-width: 992px) {
+			.ftco-hireme {
+				padding-top: 300px !important;
+			}
+		}
+
+		@media (max-width: 991px) {
+			.ftco-hireme {
+				padding-top: 200px !important;
+			}
+		}
+
+		.achievement-carousel .block-18 {
+			opacity: 1 !important;
+			transform: scale(1) !important;
+			transition: all 0.4s ease;
+			padding: 60px 20px !important;
+			/* Increased padding to make it taller */
+			min-height: 400px;
+			/* Ensuring a minimum height */
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background: #1a1a1a !important;
+			/* Solid dark background for clarity */
+			border: 1px solid rgba(255, 189, 57, 0.3);
+			/* Subtle yellow border */
+			border-radius: 10px;
+			box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.5);
+		}
+
+		/* Only Apply Zoom Animation on Desktop/Laptop Screens */
+		@media (min-width: 992px) {
+			.project-carousel .owl-item.center .blog-entry {
+				transform: scale(1.15) !important;
+				transition: transform 0.4s ease;
+				z-index: 10;
+				opacity: 1 !important;
+				box-shadow: 0px 15px 35px -5px rgba(255, 189, 57, 0.4);
+			}
+
+			.project-carousel .owl-item .blog-entry {
+				transform: scale(0.85) !important;
+				transition: transform 0.4s ease;
+				opacity: 0.3 !important;
+			}
+
+			.achievement-carousel .owl-item.center .block-18 {
+				transform: scale(1.15) !important;
+				z-index: 10;
+				opacity: 1 !important;
+				background: #262626 !important;
+				/* Slightly lighter for active card */
+				border: 1px solid #ffbd39;
+				/* Bright border for active card */
+				box-shadow: 0px 15px 40px -5px rgba(255, 189, 57, 0.3);
+			}
+
+			.achievement-carousel .owl-item .block-18 {
+				transform: scale(0.85) !important;
+				opacity: 0.6 !important;
+				/* Increased from 0.4 for better visibility */
+			}
+		}
+
 		@keyframes typing-cursor {
 			from {
 				width: 5px;
@@ -141,6 +318,59 @@
 
 		.zoom-effect:hover {
 			transform: scale(1.1);
+		}
+
+		/* Global Button Animation */
+		.btn {
+			transition: all 0.3s ease-in-out !important;
+			position: relative;
+			overflow: hidden;
+			z-index: 1;
+			animation: float 3s ease-in-out infinite;
+		}
+
+		.btn:hover,
+		.btn:focus {
+			transform: scale(1.05) translateY(-3px) !important;
+			box-shadow: 0 10px 20px rgba(255, 189, 57, 0.4) !important;
+		}
+
+		.btn:active {
+			transform: scale(0.98) !important;
+		}
+
+		@keyframes float {
+			0% {
+				transform: translateY(0px);
+			}
+
+			50% {
+				transform: translateY(-5px);
+			}
+
+			100% {
+				transform: translateY(0px);
+			}
+		}
+
+		/* Pulse effect for primary buttons */
+		.btn-primary {
+			box-shadow: 0 0 0 0 rgba(255, 189, 57, 0.7);
+			animation: float 3s ease-in-out infinite, pulse 2s infinite !important;
+		}
+
+		@keyframes pulse {
+			0% {
+				box-shadow: 0 0 0 0 rgba(255, 189, 57, 0.4);
+			}
+
+			70% {
+				box-shadow: 0 0 0 10px rgba(255, 189, 57, 0);
+			}
+
+			100% {
+				box-shadow: 0 0 0 0 rgba(255, 189, 57, 0);
+			}
 		}
 	</style>
 
@@ -181,7 +411,7 @@
 					<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
 						data-scrollax-parent="true">
 						<div class="one-third js-fullheight order-md-last img"
-							style="background-image:url(images/Shanto.jpg);">
+							style="background-image:url(images/SAF-Shanto.png);">
 							<div class="overlay"></div>
 						</div>
 						<div class="one-forth d-flex  align-items-center ftco-animate"
@@ -254,7 +484,8 @@
 							<div class="row">
 								<div class="col-sm-6 col-md-5">
 									<div class="about-img">
-										<img src="images/Shanto-02.png" class="img-fluid rounded b-shadow-a" alt="">
+										<img src="images/About-Image.jpg.jpeg" class="img-fluid rounded b-shadow-a"
+											alt="">
 									</div>
 								</div>
 								<!-- Details next to profile image -->
@@ -372,9 +603,45 @@
 				<div class="col-md-10 heading-section text-center ftco-animate">
 					<h1 class="big big-2">Resume</h1>
 					<h2 class="mb-4">Resume</h2>
-					<p>Passionate Software Engineer with hands-on experience in web development and software solutions.
+					<p style="text-align: justify;">Passionate Software Engineer with hands-on experience in web development and software solutions.
 						Proficient in modern programming approaches and eager to contribute to innovative projects while
 						continuously learning new technologies.</p>
+				</div>
+			</div>
+
+			<div class="row d-flex align-items-stretch">
+				<!-- Technical Expertise Card -->
+				<div class="col-md-6 d-flex">
+					<div class="resume-wrap ftco-animate w-100">
+						<h3 class="mb-3">🎯 Technical Expertise</h3>
+						<ul style="text-align: justify; padding-left: 20px;">
+							<li>Proficient in full-stack web development with Laravel, PHP, JavaScript, and MySQL.</li>
+							<li>Skilled in responsive UI/UX design using HTML5, CSS3, and modern frameworks.</li>
+							<li>Experienced in RESTful API development and third-party integrations.</li>
+							<li>Experienced in version control with Git and collaborative development workflows.</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Strengths Card -->
+				<div class="col-md-6 d-flex">
+					<div class="resume-wrap ftco-animate w-100">
+						<h3 class="mb-3">🚀 Strengths</h3>
+						<ul style="text-align: justify; padding-left: 20px;">
+							<li>Strong problem-solving and analytical thinking abilities.</li>
+							<li>Excellent team collaboration and communication skills.</li>
+							<li>Proven track record of delivering projects on time.</li>
+							<li>Adaptability to fast-paced environments and new challenges.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="row justify-content-center mt-4">
+				<div class="col-md-10 text-center ftco-animate">
+					<p><a href="https://drive.google.com/file/d/1l0_saHeJS44lC6Ows-pKq-0iI0POJT0J/view?usp=sharing"
+							class="btn btn-primary py-4 px-5">Download Resume</a>
+					</p>
 				</div>
 			</div>
 
@@ -384,9 +651,9 @@
 			</div>
 			<br>
 
-			<div class="row">
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
+			<div class="row d-flex align-items-stretch">
+				<div class="col-md-6 d-flex">
+					<div class="resume-wrap ftco-animate w-100">
 						<span class="date">January 2025 (4 months)</span>
 						<h2>Software Engineer Intern</h2>
 						<span class="position">SOFT-ITBD,Dhaka, Bangladesh</span>
@@ -398,12 +665,14 @@
 							</li>
 							<li>Gained practical experience in software development lifecycle and project management.
 							</li>
+						</ul>
+						</p>
 					</div>
 
 				</div>
 
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
+				<div class="col-md-6 d-flex">
+					<div class="resume-wrap ftco-animate w-100">
 						<span class="date">May 2025-present</span>
 						<h2>Software Engineer</h2>
 						<span class="position">SOFT-ITBD,Dhaka, Bangladesh</span>
@@ -431,9 +700,9 @@
 			</div>
 			<br>
 
-			<div class="row">
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
+			<div class="row d-flex align-items-stretch">
+				<div class="col-md-6 d-flex">
+					<div class="resume-wrap ftco-animate w-100">
 						<span class="date">2020-2024</span>
 						<h2>Bachelor of Computer Science and Engineering (CSE)</h2>
 						<span class="position">Daffodil International University</span>
@@ -443,8 +712,8 @@
 					</div>
 				</div>
 
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
+				<div class="col-md-6 d-flex">
+					<div class="resume-wrap ftco-animate w-100">
 						<span class="date">2016-2018</span>
 						<h2>Higher Secondary Certificate</h2>
 						<span class="position">Govt. Bangabandhu College,Jamalpur,Dhaka, Bangladesh</span>
@@ -453,8 +722,8 @@
 							Physics, and Chemistry.I loved programming and web development Since 2020.</p>
 					</div>
 				</div>
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
+				<div class="col-md-6 d-flex">
+					<div class="resume-wrap ftco-animate w-100">
 						<span class="date">2014-2016</span>
 						<h2>Secondary School Certificate</h2>
 						<span class="position">Hashil School & College,Jamalpur,Dhaka, Bangladesh</span>
@@ -464,8 +733,8 @@
 				</div>
 
 				<!-- JSC -->
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
+				<div class="col-md-6 d-flex">
+					<div class="resume-wrap ftco-animate w-100">
 						<span class="date">2013</span>
 						<h2>Junior School Certificate</h2>
 						<span class="position">Hashil School & College,Jamalpur,Dhaka, Bangladesh</span>
@@ -486,9 +755,10 @@
 
 
 
+	<!-- PROJECT -->
 	<section class="ftco-section" id="project-section">
 		<div class="container">
-			<div class="row justify-content-center mb-5 pb-5">
+			<div class="row justify-content-center mb-3">
 				<div class="col-md-7 heading-section text-center ftco-animate">
 					<h1 class="big big-2">Projects</h1>
 					<h2 class="mb-4">Projects</h2>
@@ -498,8 +768,8 @@
 			</div>
 
 			<!-- 1 Number Projects -->
-			<div class="row d-flex">
-				<div class="col-md-4 d-flex ftco-animate">
+			<div class="project-carousel owl-carousel owl-theme">
+				<div class="item">
 					<div class="blog-entry">
 						<a href="https://github.com/SanviRahman/ShantoGiftShop" class="block-20 zoom-effect"
 							style="background-image: url('images/proj_1.jpg'); border-radius: 10px;">
@@ -517,7 +787,7 @@
 				</div>
 
 				<!-- 2 Number Projects -->
-				<div class="col-md-4 d-flex ftco-animate">
+				<div class="item">
 					<div class="blog-entry justify-content-end">
 						<a href="https://github.com/SanviRahman/Daily-Basis" class="block-20 zoom-effect"
 							style="background-image: url('images/proj_3.jpg');border-radius: 10px;">
@@ -535,7 +805,7 @@
 				</div>
 
 				<!-- 3 Number Projects -->
-				<div class="col-md-4 d-flex ftco-animate">
+				<div class="item">
 					<div class="blog-entry justify-content-end">
 						<a href="https://github.com/SanviRahman/IT_SERVICES" class="block-20 zoom-effect"
 							style="background-image: url('images/proj_4.jpg');border-radius: 10px;">
@@ -553,7 +823,7 @@
 					</div>
 				</div>
 				<!-- 4 Number Projects -->
-				<div class="col-md-4 d-flex ftco-animate">
+				<div class="item">
 					<div class="blog-entry justify-content-end">
 						<a href="https://github.com/SanviRahman/Laravel-Ecommerce" class="block-20 zoom-effect"
 							style="background-image: url('images/proj_2.jpg');border-radius: 10px;">
@@ -570,7 +840,7 @@
 				</div>
 
 				<!-- 5 Number Projects -->
-				<div class="col-md-4 d-flex ftco-animate">
+				<div class="item">
 					<div class="blog-entry justify-content-end">
 						<a href="https://github.com/SanviRahman/Blog_api" class="block-20 zoom-effect"
 							style="background-image: url('images/proj_5.jpg'); border-radius: 10px;">
@@ -586,7 +856,7 @@
 				</div>
 
 				<!-- 6 Number Projects -->
-				<div class="col-md-4 d-flex ftco-animate">
+				<div class="item">
 					<div class="blog-entry justify-content-end">
 						<a href="https://github.com/SanviRahman/student_api" class="block-20 zoom-effect"
 							style="background-image: url('images/proj_6.jpg');border-radius: 10px;">
@@ -672,12 +942,13 @@
 		</div>
 	</section>
 
+	<!-- ACHIEVEMENTS -->
 	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
 		<div class="container">
 			<h2 class="mb-4" style="text-align: center;">Achievements</h2>
 			<p style="text-align: center;">I have completed projects for various clients and organizations.</p>
-			<div class="row d-md-flex align-items-center">
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+			<div class="achievement-carousel owl-carousel owl-theme">
+				<div class="item">
 					<div class="block-18">
 						<div class="text">
 							<strong class="number" data-number="10">0</strong>
@@ -685,7 +956,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+				<div class="item">
 					<div class="block-18">
 						<div class="text">
 							<strong class="number" data-number="2">0</strong>
@@ -693,7 +964,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+				<div class="item">
 					<div class="block-18">
 						<div class="text">
 							<strong class="number" data-number="8">0</strong>
@@ -701,7 +972,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+				<div class="item">
 					<div class="block-18">
 						<div class="text">
 							<strong class="number" data-number="120">0</strong>
@@ -712,7 +983,8 @@
 			</div>
 		</div>
 
-		<div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
+		<!-- HIRE ME -->
+		<div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg);">
 			<!-- <div class="container"> -->
 			<div class="row justify-content-center">
 				<div class="col-md-7 ftco-animate text-center">
@@ -730,7 +1002,7 @@
 
 
 
-		<!-- FTCO CONTACT -->
+	<!-- FTCO CONTACT -->
 	<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
 		<div class="container">
 			<div class="row justify-content-center mb-5 pb-3">
@@ -822,8 +1094,7 @@
 						<script>document.write(new Date().getFullYear());</script>
 						All rights reserved | This website developed by <i class="icon-heart color-danger"
 							aria-hidden="true"></i><a
-							href="https://www.linkedin.com/in/sheikh-forid-ahmed-shanto-03919424a/" target="_blank"> SFA
-							Shanto</a>
+							href="https://www.linkedin.com/in/sheikh-forid-ahmed-shanto-03919424a/" target="_blank"><b style="color: #ffbd39;"> SFA Shanto</b></a>
 					</p>
 				</div>
 			</div>
